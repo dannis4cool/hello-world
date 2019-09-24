@@ -1,9 +1,9 @@
-// 10727209 ¤ı«a³Ô 10727255 ©P¤lÄË
+// 10727209 ç‹å† å‹› 10727255 å‘¨å­é¨°
 #include <iostream>      // cin,cout,endl
 #include <iomanip>       // setw ( make the space length same )
 #include <string>        // c_str,length
 #include <cstdlib>       // strtoul, system  
-#include <cmath>         // sqrt 
+#include <cmath>         // sqrt   
 using namespace std ;
 int getNum (int,int) ; 
 int fSeries( int num )  ;              
@@ -52,7 +52,7 @@ int main(void) {
 			default : cout << "Command does not exist ! "  << endl ;
 			        
 		} // end switch
-	} while ( command != 0 ) ; // ¦bcommand¤£¬O¬°0ªº±¡ªp¤U°µ¥H¤Wªº¨Æ 
+	} while ( command != 0 ) ; // åœ¨commandä¸æ˜¯ç‚º0çš„æƒ…æ³ä¸‹åšä»¥ä¸Šçš„äº‹ 
 	
 	system("pause") ;  
 	return 0 ;
@@ -70,20 +70,20 @@ int getNum (int minNum , int maxNum ) {
 		cout << endl << "Input a number : " ;
 		cin >> inputS ;
 		isNum = true ;
-		for ( int i = 0 ; ( i < inputS.length() ) && (isNum) ; i ++ ) // ¤@­Ó¤@­Ó¦r¤¸ÀË¬d¬O§_¬°¼Æ¦r 
+		for ( int i = 0 ; ( i < inputS.length() ) && (isNum) ; i ++ ) // ä¸€å€‹ä¸€å€‹å­—å…ƒæª¢æŸ¥æ˜¯å¦ç‚ºæ•¸å­— 
 			if ( ('0' > inputS[i]) || (inputS[i] > '9') ) 
 				isNum = false ;
 				
 		if ( ! isNum )
-			continue ; // ¦pªG¦r¦ê«D¼Æ¦r®ÉÄ~Äò 
-		temp = strtoul(inputS.c_str(), NULL, 10 ) ; // ±N¦r¦êÂà¬°¤Q¶i¦ì 
+			continue ; // å¦‚æœå­—ä¸²éæ•¸å­—æ™‚ç¹¼çºŒ 
+		temp = strtoul(inputS.c_str(), NULL, 10 ) ; // å°‡å­—ä¸²è½‰ç‚ºåé€²ä½ 
 		if( (temp >= minNum) && (temp <= maxNum) ) 
 			break ;
 	} while(true) ;
 	
 	
 	return temp ;
-} // getNum §PÂ_¥Xinput¬O§_¬°¼Æ¦r¤§¦r¦ê ¬Oªº¸ÜÂà¬°¼Æ¦r 
+} // getNum åˆ¤æ–·å‡ºinputæ˜¯å¦ç‚ºæ•¸å­—ä¹‹å­—ä¸² æ˜¯çš„è©±è½‰ç‚ºæ•¸å­— 
 
 void iterativeFib( int num ) {
 	unsigned long long temp, small = 0, big = 0 ;
@@ -95,7 +95,7 @@ void iterativeFib( int num ) {
     	temp = a + b ; 
       	a = b ;
       	b = temp ;
-      	cout << "[  "<< i << "]" ; // ²Ä´X­Ó¶O¦¡¼Æ¦C
+      	cout << "[  "<< i << "]" ; // ç¬¬å¹¾å€‹è²»å¼æ•¸åˆ—
       	cout << temp << "=" ;
     	iterativefactor (temp, n, small, big) ;
 
@@ -103,29 +103,29 @@ void iterativeFib( int num ) {
      }
     cout << "<Outter loop : " << i - 2  << " times>" << endl ;
 
-} // iterativeFib() §Q¥Î°j°é­pºâ¶O¤ó¼Æ¦C 
+} // iterativeFib() åˆ©ç”¨è¿´åœˆè¨ˆç®—è²»æ°æ•¸åˆ— 
 
 void iterativefactor ( unsigned long long num, unsigned long long & amount , unsigned long long & ans, unsigned long long & ans2 ) {
 	amount = 1 ;
-    unsigned long long temp = sqrt( num ) ; // ¨D³o­Ó¼Æªº®Ú¸¹ ¨Ã¥B±q¤¤¶¡¶}©l§ä¦]¤l 
+    unsigned long long temp = sqrt( num ) ; // æ±‚é€™å€‹æ•¸çš„æ ¹è™Ÿ ä¸¦ä¸”å¾ä¸­é–“é–‹å§‹æ‰¾å› å­ 
  	while ( (num%temp)!= 0 ) {
   		temp -= 1 ;
   		amount++ ;
-    } // ÀËÅç­ş¨Ç¬O¦]¼Æ 
+    } // æª¢é©—å“ªäº›æ˜¯å› æ•¸ 
   
   
  	ans = temp ;
   	ans2 = num/ans;
   	cout << ans << " * " << ans2 ;
   	cout << "(Inner loop : " << amount << "times)" << endl ; 
-} // iterativefactor() §Q¥Î°j°é­pºâ³Ì±µªñªº¦]¤l 
+} // iterativefactor() åˆ©ç”¨è¿´åœˆè¨ˆç®—æœ€æ¥è¿‘çš„å› å­ 
 
 
 void recursiveFib(int num, int & i, unsigned long long a, unsigned long long b, unsigned long long total, unsigned long long & amount ) {
 	unsigned long long inner = 0 ;
 	unsigned long long temp, number = 0 ;
     
-	if ( i > num ) { //ª½¨ì§ä¥X©Ò¦³ªº¶O¤ó¼Æ¦C 
+	if ( i > num ) { //ç›´åˆ°æ‰¾å‡ºæ‰€æœ‰çš„è²»æ°æ•¸åˆ— 
 		cout << "(Outer recursion : " << i - 1<< " times)" << endl ;
 		i = 1 ;
 	}
@@ -139,17 +139,17 @@ void recursiveFib(int num, int & i, unsigned long long a, unsigned long long b, 
       	cout << "[  "<< i << "]" ;
       	cout << temp << "=" ;
       	i++ ;
-      	check( temp, 0, inner, false ) ; // §ä¥X¶O¤ó¼Æ¦C®É ±N¦]¤lµ¹§ä¥X¨Ã¦L¥X
+      	check( temp, 0, inner, false ) ; // æ‰¾å‡ºè²»æ°æ•¸åˆ—æ™‚ å°‡å› å­çµ¦æ‰¾å‡ºä¸¦å°å‡º
         return recursiveFib( num, i, a, b, total, amount ) ;  
 
 
      }
      
 		
-	} // recursiveFib() ¥H»¼°j­pºâ¶O¤ó¼Æ¦C 
+	} // recursiveFib() ä»¥éè¿´è¨ˆç®—è²»æ°æ•¸åˆ— 
 	
 
-void check( unsigned long long total, unsigned long long  temp, unsigned long long  amount, bool finded ) { // »İ­n¥H¨â­Ó»¼°j¨Ó¤À¾á¦¸¼Æ ¥H§Kµ{¦¡¶]¨ì¤@¥b¸õ¥X 
+void check( unsigned long long total, unsigned long long  temp, unsigned long long  amount, bool finded ) { // éœ€è¦ä»¥å…©å€‹éè¿´ä¾†åˆ†æ“”æ¬¡æ•¸ ä»¥å…ç¨‹å¼è·‘åˆ°ä¸€åŠè·³å‡º 
 	unsigned long long num = 0 ;
 	if ( finded == true) {
 		cout << "        (Inner recursion :    " << amount << " times)" << endl ;
@@ -167,7 +167,7 @@ void check( unsigned long long total, unsigned long long  temp, unsigned long lo
 } 
 
 
-void check2( unsigned long long total, unsigned long long  & temp, unsigned long long  & amount, bool & finded ) { // »İ­n¥H¨â­Ó»¼°j¨Ó¤À¾á¦¸¼Æ ¥H§Kµ{¦¡¶]¨ì¤@¥b¸õ¥X 
+void check2( unsigned long long total, unsigned long long  & temp, unsigned long long  & amount, bool & finded ) { // éœ€è¦ä»¥å…©å€‹éè¿´ä¾†åˆ†æ“”æ¬¡æ•¸ ä»¥å…ç¨‹å¼è·‘åˆ°ä¸€åŠè·³å‡º 
 	unsigned long long num = 0 ;
 	if ( finded == true) {
 		;
@@ -190,7 +190,7 @@ void recursivefactor( unsigned long long total, unsigned long long & temp, unsig
 	
 	unsigned long long ans, ans2 ;
 	if ( temp == 0)
-	  temp = sqrt( total ) ; // ¦b²Ä¤@¦¸¶ifunction®É±N¼Æ¶}®Ú¸¹¨Ã¥B±q¤¤¶¡¦V¤U§ä¦]¤l 
+	  temp = sqrt( total ) ; // åœ¨ç¬¬ä¸€æ¬¡é€²functionæ™‚å°‡æ•¸é–‹æ ¹è™Ÿä¸¦ä¸”å¾ä¸­é–“å‘ä¸‹æ‰¾å› å­ 
 	if ( total % temp == 0 ) {
 	    ans = temp ;
 		ans2 = total / ans ;
@@ -209,7 +209,7 @@ void recursivefactor( unsigned long long total, unsigned long long & temp, unsig
 	}
 	
 	
-} // recursivefactor() ¥H»¼°j­pºâ¥X³Ì±µªñªº¦]¤l 
+} // recursivefactor() ä»¥éè¿´è¨ˆç®—å‡ºæœ€æ¥è¿‘çš„å› å­ 
 
 	
 	
